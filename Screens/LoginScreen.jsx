@@ -2,10 +2,12 @@ import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { Button, Image, Input } from '@rneui/themed';
 import { KeyboardAvoidingView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigation = useNavigation();
 
     const signIn = ()=>{
 
@@ -19,7 +21,7 @@ const LoginScreen = () => {
         <Input placeholder='Password' secureTextEntry type='password' value={password} onChangeText={text => setPassword(text)}/>
       </View>
       <Button containerStyle={styles.button} title='Login' onPress={signIn}/>
-      <Button containerStyle={styles.button} type='outline' title='Register'/>
+      <Button containerStyle={styles.button} type='outline' title='Register' onPress={()=>navigation.navigate('Register')}/>
       <View style={{height:100}}></View>
     </KeyboardAvoidingView>
   )
@@ -33,11 +35,13 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         padding:10,
+        backgroundColor:'white',
     },
     inputContainer:{
-
+        width:300,
     },
     button:{
-
+        width:200,
+        marginTop:10,
     },
 })
