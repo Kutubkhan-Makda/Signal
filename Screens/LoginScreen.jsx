@@ -5,7 +5,7 @@ import { Button, Image } from '@rneui/themed';
 const LoginScreen = () => {
   return (
     <View>
-      <Image source={{uri:"https://upload.wikimedia.org/wikipedia/commons/5/56/Logo_Signal..png"}} style={{width:200,height:200}}/>
+      <Image source={require('../assets/Logo_Signal.png')} style={{width:200,height:200}}/>
     </View>
   )
 }
