@@ -6,9 +6,10 @@ import LoginScreen from './Screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 const globalScreenOptions = {
-  headerStyle:{backgroundColor:'#2C6BED',textAlign:'center'},
+  headerStyle:{backgroundColor:'#2C6BED'},
   headerTitleStyle:{color:'white'},
   headerTintColor:'white',
+  headerTitleAlign: 'center',
 };
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
     <SafeAreaView style={styles.AndroidSafeArea}>
       <NavigationContainer>
         <Stack.Navigator screenOptions={globalScreenOptions}>
-          <Stack.Screen name="Home" component={HomeScreen} />
+          
           <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
       </NavigationContainer>
