@@ -15,6 +15,7 @@ const globalScreenOptions = {
 export default function App() {
   return (
     <SafeAreaView style={styles.AndroidSafeArea}>
+      <StatusBar style='light'/>
       <NavigationContainer>
         <Stack.Navigator screenOptions={globalScreenOptions}>
           
