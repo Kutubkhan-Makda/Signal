@@ -7,7 +7,7 @@ const LoginScreen = () => {
     <View>
       <Image source={require('../assets/Logo_Signal.png')} style={{width:200,height:200}}/>
       <View style={styles.inputContainer}>
-        <Input placeholder=''/>
+        <Input placeholder='Email'/>
       </View>
     </View>
   )
