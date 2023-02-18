@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Button } from '@rneui/themed';
+import { Button, Image } from '@rneui/themed';
 
 const LoginScreen = () => {
   return (
     <View>
-      <Text>LoginScreen</Text>
+      <Image source={{uri:"https://upload.wikimedia.org/wikipedia/commons/5/56/Logo_Signal..png"}} style={{width:200,height:200}}/>
     </View>
   )
 }
