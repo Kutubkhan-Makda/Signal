@@ -3,6 +3,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import { KeyboardAvoidingView } from 'react-native'
 import { Button, Input, Text } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
+import { auth } from '../firebase'
 
 const RegisterScreen = () => {
     const [name, setName] = useState('');
@@ -18,7 +19,10 @@ const RegisterScreen = () => {
     },[navigation])
 
     const register = ()=>{
-
+        auth.createUserWithEmailAndPassword(email,password)
+        .then(authUser => {
+            
+        })
     }
 
   return (
