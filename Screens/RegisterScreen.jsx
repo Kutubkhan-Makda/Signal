@@ -9,7 +9,7 @@ const RegisterScreen = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [imageUri, setImageUri] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
     const navigation = useNavigation();
 
     useLayoutEffect(()=>{
@@ -21,8 +21,8 @@ const RegisterScreen = () => {
     const register = ()=>{
         auth.createUserWithEmailAndPassword(email,password)
         .then(authUser => {
-            
-        })
+            authUser.user.update({displayName:name,photoURL:imageUrl})
+        }).catch((error)=>alert(error.message));
     }
 
   return (
@@ -34,7 +34,7 @@ const RegisterScreen = () => {
             <Input placeholder='Full Name' type='text' value={name} onChangeText={text => setName(text)} autoFocus/>
             <Input placeholder='Email' type='email' value={email} onChangeText={text => setEmail(text)}/>
             <Input placeholder='Password' type='password' value={password} onChangeText={text => setPassword(text)} secureTextEntry/>
-            <Input placeholder='Profile Picture URI' type='text' value={imageUri} onChangeText={text => setImageUri(text)} onSubmitEditing={register}/>
+            <Input placeholder='Profile Picture URI' type='text' value={imageUrl} onChangeText={text => setImageUrl(text)} onSubmitEditing={register}/>
         </View>
         <Button raised title='Register' onPress={register} containerStyle={styles.button}/>
     </KeyboardAvoidingView>
