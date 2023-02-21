@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Avatar, ListItem } from '@rneui/themed'
 
-const CustomListItem = () => {
+const CustomListItem = ({id,chatName,enterChat}) => {
   return (
     <ListItem>
       <Avatar rounded source={{uri:'https://e7.pngegg.com/pngimages/985/993/png-clipart-company-businessperson-board-of-directors-advanced-orthopaedic-centers-avtar-company-service.png'}}/>
@@ -10,8 +10,8 @@ const CustomListItem = () => {
         <ListItem.Title style={{fontWeight:'800'}}>
             Youtube
         </ListItem.Title>
-        <ListItem.Subtitle numberOfLines={1}>
-
+        <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail">
+            xvn fdhdsvh vlkdjvos slfkdjsd sdfsdhffs dfhsdfn sflkjdjvi fsdahfoisdshf ihoifjk
         </ListItem.Subtitle>
       </ListItem.Content>
     </ListItem>
