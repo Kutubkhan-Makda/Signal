@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Image, Input } from '@rneui/themed';
 import { KeyboardAvoidingView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
