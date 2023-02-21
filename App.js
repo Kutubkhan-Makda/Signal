@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './Screens/LoginScreen';
 import RegisterScreen from './Screens/RegisterScreen';
 import HomeScreen from './Screens/HomeScreen';
 import { Avatar } from '@rneui/themed';
-import {} from 'firebase'
+import {auth,db} from './firebase'
 
 const Stack = createNativeStackNavigator();
 const globalScreenOptions = {
@@ -30,7 +30,9 @@ export default function App() {
           headerTitleStyle:{color:'black'},
           headerLeft:()=>{
             <View style={{marginLeft:20}}>
-              <Avatar rounded source={{auth?.currentUser}}/>
+              <TouchableOpacity>
+                <Avatar rounded source={{uri:auth?.currentUser?.photoURL}}/>
+              </TouchableOpacity>
             </View>
           }}}/>
         </Stack.Navigator>
