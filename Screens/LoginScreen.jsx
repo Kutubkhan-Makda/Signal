@@ -3,11 +3,21 @@ import React, { useState } from 'react'
 import { Button, Image, Input } from '@rneui/themed';
 import { KeyboardAvoidingView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { auth } from '../firebase';
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigation = useNavigation();
+
+    useEffect(() => {
+      auth.onAuthStateChanged((authUser)=>{
+        if(authUser){
+          navigation.navigate('Home')
+        }
+      })
+    }, [])
+    
 
     const signIn = ()=>{
 
