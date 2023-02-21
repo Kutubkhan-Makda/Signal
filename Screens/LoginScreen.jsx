@@ -11,11 +11,12 @@ const LoginScreen = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-      auth.onAuthStateChanged((authUser)=>{
+      const unsubscribe = auth.onAuthStateChanged((authUser)=>{
         if(authUser){
           navigation.navigate('Home')
         }
       })
+      return unsubscribe;
     }, [])
     
 
