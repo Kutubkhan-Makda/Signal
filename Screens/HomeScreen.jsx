@@ -33,7 +33,7 @@ const HomeScreen = () => {
         <TouchableOpacity activeOpacity={0.5}>
           <Icon type='antdesign' name='camerao' sixe={24} color='black'/>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.5}>
+        <TouchableOpacity activeOpacity={0.5} onPress={()=>navigation.navigate('AddChat')}>
           <Icon type='entypo' name='pencil' sixe={24} color='black'/>
         </TouchableOpacity>
       </View>
