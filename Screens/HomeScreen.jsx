@@ -29,12 +29,12 @@ const HomeScreen = () => {
       </View>
     ),
     headerRight:()=>(
-      <View style={{flexDirection:'row',justifyContent:'space-between',width:80,height:20}}>
+      <View style={{flexDirection:'row',justifyContent:'space-between',width:80,height:25}}>
         <TouchableOpacity activeOpacity={0.5}>
           <Icon type='antdesign' name='camerao' sixe={24} color='black'/>
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={0.5}>
-          <Icon type='simplelineicons' name='pencil' sixe={24} color='black'/>
+          <Icon type='entypo' name='pencil' sixe={24} color='black'/>
         </TouchableOpacity>
       </View>
     ),})
