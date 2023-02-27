@@ -14,9 +14,17 @@ const AddChatScreen = () => {
       })
     }, [])
 
+    const createChat = async ()=>{
+      await db.collection('chats').add({
+        chatName: input
+      }).then(()=>{
+        navigation.goBack()
+      }).catch(error => alert(error));
+    }
+
   return (
     <View style={styles.container}>
-      <Input placeholder='Enter a chat name' value={input} onChangeText={(text)=>setInput(text)} leftIcon={<Icon name='wechat' type='antdesign' size={34} color='black'/>}/>
+      <Input placeholder='Enter a chat name' value={input} onChangeText={(text)=>setInput(text)} onSubmitEditing={createChat} leftIcon={<Icon name='wechat' type='antdesign' size={34} color='black'/>}/>
       <Button onPress={createChat} title='Create New Chat'/>
     </View>
   )
