@@ -13,6 +13,7 @@ const globalScreenOptions = {
   headerTitleStyle:{color:'white'},
   headerTintColor:'white',
   headerTitleAlign: 'center',
+  statusBarStyle:'dark',
 };
 
 export default function App() {

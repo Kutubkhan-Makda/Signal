@@ -2,10 +2,11 @@ import { StyleSheet, Text, View } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Button, Icon, Input } from '@rneui/themed';
+import { db } from '../firebase';
 
 const AddChatScreen = () => {
     const navigation = useNavigation();
-    const [input, setInput] = useStatea('');
+    const [input, setInput] = useState('');
 
     useLayoutEffect(() => {
       navigation.setOptions({
@@ -34,6 +35,8 @@ export default AddChatScreen
 
 const styles = StyleSheet.create({
     container:{
-
+      backgroundColor:'white',
+      padding:30,
+      height:'100%',
     },
 })

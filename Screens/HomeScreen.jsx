@@ -1,5 +1,5 @@
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import CustomListItem from '../Components/CustomListItem'
 import { useNavigation } from '@react-navigation/native'
 import { Avatar, Icon } from '@rneui/themed'
@@ -11,6 +11,8 @@ import { TouchableOpacity } from 'react-native'
 const HomeScreen = () => {
   const navigation = useNavigation();
 
+  const [chats, setChats] = useState([]);
+
   const signOut = ()=>{
     auth.signOut().then(()=>{navigation.navigate('Login')})
   }
@@ -19,7 +21,6 @@ const HomeScreen = () => {
     navigation.setOptions({
     title:'Signal',
     headerStyle:{backgroundColor:'#fff'},
-    statusBarStyle:'dark',
     headerTitleStyle:{color:'black'},
     headerLeft:()=>(
       <View style={{marginLeft:7}}>
@@ -40,10 +41,21 @@ const HomeScreen = () => {
     ),})
   }, [navigation])
 
+  useEffect(() => {
+    const unSubscribe = db.collection('chats').onSnapshot(snapshot => (
+      setChats(snapshot.docs.map(doc => ({
+        id: doc.id,
+        data: doc.data()
+      })))
+    ))
+    return unSubscribe;
+  }, [])
+  
+
   return (
     <SafeAreaView>
       <ScrollView>
-        <CustomListItem/>
+        {chats.map(({id,data:{chatName}}) => (<CustomListItem key={id} id={id} chatName={chatName}/>))}
       </ScrollView>
     </SafeAreaView>
   )
