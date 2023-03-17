@@ -4,7 +4,7 @@ import { Avatar, ListItem } from '@rneui/themed'
 
 const CustomListItem = ({id,chatName,enterChat}) => {
   return (
-    <ListItem key={id} bottomDivider>
+    <ListItem onPress={()=>enterChat(id,chatName)} key={id} bottomDivider>
       <Avatar rounded source={{uri:'https://e7.pngegg.com/pngimages/985/993/png-clipart-company-businessperson-board-of-directors-advanced-orthopaedic-centers-avtar-company-service.png'}}/>
       <ListItem.Content>
         <ListItem.Title style={{fontWeight:'800'}}>
