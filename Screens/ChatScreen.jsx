@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
-import { Avatar } from '@rneui/themed';
+import { Avatar, Icon } from '@rneui/themed';
 
 const ChatScreen = ({route}) => {
     const navigation = useNavigation();
@@ -18,7 +18,19 @@ const ChatScreen = ({route}) => {
                 </View>
             ),
             headerLeft:()=>(
-                <TouchableOpacity></TouchableOpacity>
+                <TouchableOpacity style={{marginLeft:10}} onPress={navigation.goBack}>
+                    <Icon name='arrowleft' type='antdesign' size={24} color='white'/>
+                </TouchableOpacity>
+            ),
+            headerRight:()=>(
+                <View>
+                    <TouchableOpacity>
+                        <Icon name='video-camera' type='fontawesome' size={24} color='white'/>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        
+                    </TouchableOpacity>
+                </View>
             ),
         })
     },[navigation])
