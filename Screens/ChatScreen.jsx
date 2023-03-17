@@ -28,7 +28,7 @@ const ChatScreen = ({route}) => {
                         <Icon name='video-camera' type='fontawesome' size={24} color='white'/>
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        
+
                     </TouchableOpacity>
                 </View>
             ),
